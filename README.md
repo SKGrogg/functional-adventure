@@ -1,5 +1,5 @@
 # functional-adventure
-A simple text-based computer game written entirely in Haskell. The current gameplay is simple and unstructured, but the underlying mechanics are in place.
+A simple text-based computer game written entirely in Haskell. The current gameplay is simple and unstructured, but the underlying mechanics are in place. Originally created for Functional Programming (Spring 2022) at the University of Chicago.
 
 # Context: 
 
