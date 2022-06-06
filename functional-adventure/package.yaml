@@ -1,0 +1,65 @@
+name:                functional-adventure
+version:             0.1.0.0
+
+extra-source-files:
+- README.md
+
+description:         functional-adventure
+
+ghc-options:
+- -Werror
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wno-unused-top-binds
+- -Wno-unused-local-binds
+- -Wno-unused-pattern-binds
+- -Wno-unused-matches
+- -Wno-missing-signatures
+- -Wno-type-defaults
+- -Wno-compat-unqualified-imports
+- -Wno-unused-imports
+
+
+default-extensions:
+- InstanceSigs
+- NamedFieldPuns
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- random
+- parsec
+- mtl
+
+library:
+  source-dirs: src
+
+executables:
+  functional-adventure-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - functional-adventure
+    when:
+    - condition: false
+      other-modules: Paths_functional_adventure
+
+tests:
+  functional-adventure-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - functional-adventure
+    - hspec
+    - hspec-discover
+    - QuickCheck

@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.6.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a19afebd7dd96e93c748bd97f8f8a8c7dba05dab7a88d4b32d8eb449d6a91635
+
+name:           functional-adventure
+version:        0.1.0.0
+description:    functional-adventure
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Command
+      Direction
+      Example
+      GameIO
+      GameState
+      Item
+      Player
+      Room
+  other-modules:
+      Paths_functional_adventure
+  hs-source-dirs:
+      src
+  default-extensions:
+      InstanceSigs
+      NamedFieldPuns
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-unused-imports
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , mtl
+    , parsec
+    , random
+  default-language: Haskell2010
+
+executable functional-adventure-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  default-extensions:
+      InstanceSigs
+      NamedFieldPuns
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-unused-imports -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , functional-adventure
+    , mtl
+    , parsec
+    , random
+  default-language: Haskell2010
+
+test-suite functional-adventure-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_functional_adventure
+  hs-source-dirs:
+      test
+  default-extensions:
+      InstanceSigs
+      NamedFieldPuns
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-unused-imports -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , functional-adventure
+    , hspec
+    , hspec-discover
+    , mtl
+    , parsec
+    , random
+  default-language: Haskell2010
